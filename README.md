@@ -27,7 +27,7 @@ To get started with the Robot Framework, follow these steps:
 
             - it will PIP install all the needed libraries which are defined the in *requirements.txt* file.
 
-        2. Activate the virtual environment by executing the *activate_venv.sh* script:
+        2. Activate the virtual environment by executing the *activate_venv.sh* script[OPTIONAL]:
                 
                 $ . activate_venv.sh
 
