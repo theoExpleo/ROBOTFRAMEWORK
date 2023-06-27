@@ -30,6 +30,9 @@ activate:
 run:
 	robot tests/testDemo1.robot
 
+run2:
+	robot tests/testDemo2.robot
+
 # Target to deactivate the Virtual environment
 deactivate:
 	deactivate
