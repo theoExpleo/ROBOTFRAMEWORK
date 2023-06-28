@@ -11,12 +11,17 @@ Resource       resource.robot
 
 *** Variables ***
 ${Error_message_Login}    css:.alert-danger
+${shop_page_load}    css:nav-link
 
 *** Test Cases ***
 Validate unsuccessful Login
-    Fill the login form
-    wait until it checks and display error message
+    Fill the login form    ${user_name}    ${invalid_password}
+    wait until element is located in the page    ${Error_message_Login}
     verify error message is correct
+
+Validate Cards display in the Shopping Page
+    Fill the login form    ${username2}    ${valid_password}
+    wait until element is located in the page    ${shop_page_load}
 
 *** Keywords ***
 open the browser with the Mortgage payment url
@@ -24,12 +29,17 @@ open the browser with the Mortgage payment url
     Go To    https://rahulshettyacademy.com/loginpagePractise/
 
 Fill the login form
-    Input Text        id:username    ${user_name}
-    Input Password    id:password    ${invalid_password}
+    [Arguments]    ${username}    ${password}
+    Input Text        id:username    ${username}
+    Input Password    id:password    ${password}
     Click Button      signInBtn
 
-wait until it checks and display error message
-    Wait Until Element Is Visible    ${Error_message_Login}
+
+wait until element is located in the page
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}
+
+
 
 verify error message is correct
     # This uses the defining variable approach
