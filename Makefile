@@ -33,6 +33,15 @@ run:
 run2:
 	robot tests/testDemo2.robot
 
+run3:
+	robot tests/testDemo3.robot
+
+run4:
+	robot tests/testDemo4.robot	
+
 # Target to deactivate the Virtual environment
 deactivate:
 	deactivate
+
+clean:
+	rm *.png *.html *.xml
