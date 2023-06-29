@@ -18,7 +18,7 @@ ${url}    https://rahulshettyacademy.com/loginpagePractise/
 
 open the browser with the Mortgage payment url
     Create Webdriver    Chrome    executable_path=/home/dsf12/Documents/VsCode/RobotFramework/Drivers/chromedriver
-    Go To    url
+    Go To    ${url}
 
 Close Browser session
     Close Browser
