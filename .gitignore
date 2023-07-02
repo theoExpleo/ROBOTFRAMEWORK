@@ -2,3 +2,7 @@ virtualEnvironment
 *.html
 *.xml
 *.png
+.pabotsuitenames
+__pycache__
+pabot_results
+.pabotsuitenames
