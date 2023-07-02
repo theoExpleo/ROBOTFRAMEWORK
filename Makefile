@@ -1,5 +1,13 @@
-SHELL := /bin/bash
+
 # Makefile to create a Python Virtual Environment
+
+
+# Variables needed to store command-line arguments needed 
+# run Robot Framework tests
+TestScriptName :=
+tagName :=
+folderName :=
+
 
 # Specify the name of the virtual environment
 VENV_NAME = virtualEnvironment
@@ -38,6 +46,39 @@ run3:
 
 run4:
 	robot tests/testDemo4.robot	
+
+run5:
+	robot tests/testDemo5.robot
+
+run6:
+	robot tests/testDemo6.robot	
+
+
+# Runs all the tests but sequentially
+sequence_run:
+	robot tests/.
+
+# Runs all the tests in parallel
+parallel_run:
+	pabot	tests/.
+
+
+# Runs the test cases in a Test Script parallely
+run_test_level:
+	pabot --testlevelsplit '${TestScriptName}'
+
+# Runs test cases that are annotated with the specified test name
+# To exclude a certain tag from being run you use "--include" instead.
+run_tag:
+	robot --include ${tagName} .
+
+run_failed:
+	robot --rerunfailed output.xml tests/.
+
+# A test suite is a collection of multiple files/scripts that
+# contain test cases
+run_test_suite:
+	robot --suite ${folderName}
 
 # Target to deactivate the Virtual environment
 deactivate:
