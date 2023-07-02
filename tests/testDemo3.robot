@@ -4,9 +4,9 @@ Library        SeleniumLibrary
 Library        String
 Library        Collections
 
-Test Setup     open the browser with the Mortgage payment url
+Test Setup     open the browser with the url  Chrome
 Test Teardown  Close Browser session
-Resource       resource.robot
+Resource       ../PageObjects/Generic.robot
 
 
 *** Variables ***
